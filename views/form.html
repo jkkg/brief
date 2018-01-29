@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form</title>
+    <style>
+        .block{
+            margin: 20px 0;
+        }
+        .resize{
+            resize: none;
+        }
+    </style>
+    <script type="text/javascript" src="jquery-3.2.1.js"></script>
+</head>
+<body>
+    <div style="width: 750px; margin: 0 auto">
+        <p>Пожалуйста, заполните бриф максимально подробно. Это позволит нам определить конкретные сроки и стоимость разработки.
+            Срок оценки брифа 2-3 рабочих дня.
+        </p>
+
+        <form action="/form" method="post">
+            <div class="block">
+                <label for="title">Название компании</label><br>
+                <input type="text" name="title" id="title">
+            </div>
+            <div class="block">
+                <label for="activity">Сфера деятельности компании</label><br>
+                <textarea class="resize" name="activity" id="activity" cols="60" rows="5"></textarea>
+            </div>
+            <div class="block">
+                <label for="characteristics">Характеристики основных услуг</label><br>
+                <textarea class="resize" name="characteristics" id="characteristics" cols="60" rows="5"></textarea>
+            </div>
+            <div class="block">
+                <label for="geography">География реализация товаров, услуг:</label><br>
+                <textarea class="resize" name="geography" id="geography" cols="60" rows="5"></textarea>
+            </div>
+            <div class="block">
+                <label for="consumer">Кто является основным потребителем (целевая аудитория сайта):</label><br>
+                <textarea class="resize" name="consumer" id="consumer" cols="60" rows="5"></textarea>
+            </div>
+            <div class="block">
+                <label for="competitor">Конкуренты, их веб-ресурсы:</label><br>
+                <textarea class="resize" name="competitor" id="competitor" cols="60" rows="5"></textarea>
+            </div>
+            <div class="block">
+                <label for="task">Задачи, которые должен решать сайт:</label><br>
+                <textarea class="resize" name="task" id="task" cols="60" rows="5"></textarea>
+            </div>
+
+            <div class="block">
+                <p>Тип сайта</p>
+                <input type="checkbox" name="type" id="type_landing" value="landing page (одна страница - один продукт)">
+                <label for="type_landing">landing page (одна страница - один продукт)</label><br>
+                <input type="checkbox" name="type" id="type_card" value="сайт визитка ( несколько страниц - несколько продуктов)">
+                <label for="type_card">сайт визитка ( несколько страниц - несколько продуктов)</label><br>
+                <input type="checkbox" name="type" id="type_corporate" value="корпоративный сайт">
+                <label for="type_corporate">корпоративный сайт</label><br>
+                <input type="checkbox" name="type" id="type_shop" value="интернет магазин">
+                <label for="type_shop">интернет магазин</label><br>
+                <input type="checkbox" name="type" id="type_webapplication" value="полноценное веб-приложение">
+                <label for="type_webapplication">полноценное веб-приложение</label><br>
+                <input type="checkbox" name="type" id="type_other" value="другое">
+                <label for="type_other">другое</label><br>
+                <textarea style="display:none" class="resize" name="type_other" cols="60" rows="5"></textarea>
+            </div>
+
+            <div class="block">
+                <p>Основные разделы сайта (описать точную структуру разделов сайта)</p>
+                <input type="checkbox" name="section" id="section_company" value="О Компании">
+                <label for="section_company">О Компании</label><br>
+                <input type="checkbox" name="section" id="section_portfolio" value="Портфолио">
+                <label for="section_portfolio">Портфолио</label><br>
+                <input type="checkbox" name="section" id="section_price" value="Прайс-лист">
+                <label for="section_price">Прайс-лист</label><br>
+                <input type="checkbox" name="section" id="section_news" value="Новости">
+                <label for="section_news">Новости</label><br>
+                <input type="checkbox" name="section" id="section_contact" value="Контактная информация">
+                <label for="section_contact">Контактная информация</label><br>
+                <input type="checkbox" name="section" id="section_other" value="Другие:">
+                <label for="section_other">Другие:</label><br>
+                <textarea style="display:none" class="resize" name="section_other"  cols="60" rows="5"></textarea>
+            </div>
+
+            <div class="block">
+                <p>Частота предполагаемых обновлений сайта:</p>
+                <input type="radio" name="frequency" id="frequency_year" value="раз в год">
+                <label for="frequency_year">раз в год</label><br>
+                <input type="radio" name="frequency" id="frequency_month" value="раз в месяц">
+                <label for="frequency_month">раз в месяц</label><br>
+                <input type="radio" name="frequency" id="frequency_week" value="раз в неделю">
+                <label for="frequency_week">раз в неделю</label><br>
+                <input type="radio" name="frequency" id="frequency_day" value="ежедневно">
+                <label for="frequency_day">ежедневно</label>
+            </div>
+
+            <div class="block">
+                <p>Языковые версии сайта</p>
+                <input type="checkbox" name="language" id="language_kyrgyz" value="Кыргызский">
+                <label for="language_kyrgyz">Кыргызский</label><br>
+                <input type="checkbox" name="language" id="language_russian" value="Русский">
+                <label for="language_russian">Русский</label><br>
+                <input type="checkbox" name="language" id="language_english" value="Английский">
+                <label for="language_english">Английский</label><br>
+                <input type="checkbox" name="language" id="language_other" value="Другие:">
+                <label for="language_other">Другие:</label><br>
+                <textarea style="display:none" class="resize" name="language_other"  cols="60" rows="5"></textarea>
+
+            </div>
+
+            <div class="block">
+                <label for="content">Контент сайта (на примере сайта для публикации новостей. На сайте будут новости,
+                    которые будут состоять из заголовка и описания)</label><br>
+                <textarea class="resize" name="content" id="content" cols="60" rows="5"></textarea>
+            </div>
+
+            <div class="block">
+                <p>Стиль сайта</p>
+                <input type="checkbox" name="style" id="style_solid" value="солидный">
+                <label for="style_solid">солидный</label><br>
+                <input type="checkbox" name="style" id="style_fun" value="веселый">
+                <label for="style_fun">веселый</label><br>
+                <input type="checkbox" name="style" id="style_minimalistic" value="минималистичный">
+                <label for="style_minimalistic">минималистичный</label><br>
+                <input type="checkbox" name="style" id="style_other" value="другое">
+                <label for="style_other">другие:</label><br>
+                <textarea style="display:none" class="resize" name="style_other"  cols="60" rows="5"></textarea>
+            </div>
+
+            <div class="block">
+                <label for="impression">Впечатление, которое должен произвести сайт на пользователя</label><br>
+                <textarea class="resize" name="impression" id="impression" cols="60" rows="5"></textarea>
+            </div>
+
+            <div class="block">
+                <label for="message">Какое основное сообщение необходимо довести до сознания потребителя (призыв к действию)</label><br>
+                <textarea class="resize" name="message" id="message" cols="60" rows="5"></textarea>
+            </div>
+
+            <div class="block">
+                <p>Что вы хотите, чтобы пользователь в результате посещения сайта</p>
+                <input type="checkbox" name="result_vision" id="result_vision" value="Увидел:">
+                <label for="result_vision">Увидел:</label>
+                <input style="display:none" type="text" name="result_vision"><br>
+                <input type="checkbox" name="result_action" id="result_action" value="Сделал:">
+                <label for="result_action">Сделал:</label>
+                <input style="display:none" type="text" name="result_action"><br>
+                <input type="checkbox" name="result_feeling" id="result_feeling" value="Почувствовал:">
+                <label for="result_feeling">Почувствовал:</label>
+                <input style="display:none" type="text" name="result_feeling"><br>
+            </div>
+
+            <div class="block">
+                <label for="colour">Цветовая гамма сайта (не нужно заполнять, если есть брендбук)</label><br>
+                <textarea class="resize" name="colour" id="colour" cols="60" rows="5"></textarea>
+            </div>
+
+            <div class="block">
+                <p>Компоненты сайта:</p>
+                <input type="checkbox" name="component" id="component_news" value="Новости">
+                <label for="component_news">Новости</label><br>
+                <input type="checkbox" name="component" id="component_email" value="Почтовая рассылка">
+                <label for="component_email">Почтовая рассылка</label><br>
+                <input type="checkbox" name="component" id="component_archive" value="Архив">
+                <label for="component_archive">Архив</label><br>
+                <input type="checkbox" name="component" id="component_survey" value="Анкетирование">
+                <label for="component_survey">Анкетирование</label><br>
+                <input type="checkbox" name="component" id="component_admin" value="Административная часть (полное управление сайтом сотрудниками компании)">
+                <label for="component_admin">Административная часть (полное управление сайтом сотрудниками компании)</label><br>
+                <input type="checkbox" name="component" id="component_statistics" value="Сбор статистики (GA / YM/ Собственное решение)">
+                <label for="component_statistics">Сбор статистики (GA / YM/ Собственное решение)</label><br>
+                <input type="checkbox" name="component" id="component_other" value="Другое:">
+                <label for="component_other">Другие:</label><br>
+                <textarea style="display:none" class="resize" name="component_other"  cols="60" rows="5"></textarea>
+            </div>
+
+            <div class="block">
+                <p>Предусматривать ли место под баннерную рекламу:</p>
+                <input type="radio" name="advertisement" id="advertisement_yes" value="да">
+                <label for="advertisement_yes">да</label><br>
+                <input type="radio" name="advertisement" id="advertisement_no" value="нет">
+                <label for="advertisement_no">нет</label><br>
+            </div>
+
+            <div class="block">
+                <p>Предусматривать ли место для счетчиков посещений:</p>
+                <input type="radio" name="counter" id="counter_yes" value="да">
+                <label for="counter_yes">да</label><br>
+                <input type="radio" name="counter" id="counter_no" value="нет">
+                <label for="counter_no">нет</label><br>
+            </div>
+
+            <div class="block">
+                <p>Сроки исполнения заказа (сколько готов ждать клиент):</p>
+                <input type="radio" name="duration" id="duration_week" value="неделя">
+                <label for="duration_week">неделя</label><br>
+                <input type="radio" name="duration" id="duration_month" value="месяц">
+                <label for="duration_month">месяц</label><br>
+                <input type="radio" name="duration" id="duration_quarter" value="3 месяца">
+                <label for="duration_quarter">3 месяца</label><br>
+                <input type="radio" name="duration" id="duration_halfyear" value="полгода">
+                <label for="duration_halfyear">полгода</label><br>
+                <input type="radio" name="duration" id="duration_other" value="другое">
+                <label for="duration_other">другое</label><br>
+                <textarea style="display: none" class="resize" name="duration_other" cols="60" rows="5"></textarea>
+            </div>
+
+            <div class="block">
+                <p>Пользовательский сценарий (описать шаги, как посетители  будут взаимодействовать с сайтом) Чем больше
+                    сценарий, тем лучше мы поймем видение клиента.</p>
+                <ol>
+                    <li><i>Посетитель зашел на сайт интернет магазина по адресу  www.name.com</i></li>
+                    <li><i>На главной странице увидел товар, нажал на него</i></li>
+                    <li><i>попал на страницу с детальным описание товара</i></li>
+                    <li><i>нажал на кнопку “добавить в корзину”</i></li>
+                    <li><i>Зашел в саму корзину, заполнил адрес доставки</i></li>
+                    <li><i>оплатил через банковскую карту</i></li>
+                </ol>
+            </div>
+
+            <div class="block">
+                <label for="scenario1">сценарий 1:</label><br>
+                <textarea class="resize" name="scenario1" id="scenario1" cols="60" rows="5"></textarea>
+            </div>
+            <div class="block">
+                <label for="scenario2">сценарий 2:</label><br>
+                <textarea class="resize" name="scenario2" id="scenario2" cols="60" rows="5"></textarea>
+            </div>
+            <div class="block">
+                <label for="scenario3">сценарий 3:</label><br>
+                <textarea class="resize" name="scenario3" id="scenario3" cols="60" rows="5"></textarea>
+            </div>
+            <div class="block">
+                <label for="note">Примечание</label><br>
+                <textarea class="resize" name="note" id="note" cols="60" rows="5"></textarea>
+            </div>
+
+                <input type="submit" value="Отправить" style="margin: 20px 0">
+
+            <script>
+
+                const showTextarea = function (arg1) {
+                    $('#'+arg1).change(function (e) {
+                        e.preventDefault();
+
+                        if ($('#'+arg1).is(':checked')) {
+                            $('textarea[name='+arg1+']')[0].style.display = 'block';
+                        } else {
+                            $('textarea[name='+arg1+']')[0].style.display = 'none';
+                        }
+                    });
+                };
+
+                const showInputText = function (arg1) {
+                    $('#'+arg1).change(function (e) {
+                        e.preventDefault();
+
+                        if ($('#'+arg1).is(':checked')) {
+                            $('input[name='+arg1+']:text')[0].style.display = 'inline-block';
+                        } else {
+                            $('input[name='+arg1+']:text')[0].style.display = 'none';
+                        }
+                    });
+                };
+
+                showTextarea('type_other');
+                showTextarea('section_other');
+                showTextarea('language_other');
+                showTextarea('style_other');
+                showTextarea('component_other');
+                showInputText('result_feeling');
+                showInputText('result_action');
+                showInputText('result_vision');
+
+                $('input[name=duration]:radio').change(function (e) {
+                    e.preventDefault();
+
+                    if ($('#duration_other').is(':checked')) {
+                        $('textarea[name=duration_other]')[0].style.display = 'block';
+                    } else {
+                        $('textarea[name=duration_other]')[0].style.display = 'none';
+                    }
+                });
+
+            </script>
+        </form>
+    </div>
+</body>
+</html>
